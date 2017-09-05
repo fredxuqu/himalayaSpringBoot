@@ -39,6 +39,7 @@
 		    <groupId>org.springframework.boot</groupId>  
 		    <artifactId>spring-boot-starter-redis</artifactId>  
 		</dependency>
+
 		<!-- oracle jdbc driver -->
 		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc6 -->
 		<dependency>
