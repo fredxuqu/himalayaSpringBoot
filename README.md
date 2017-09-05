@@ -1,2 +1,0 @@
-# himalayaSpringBoot
-demo of springboot
