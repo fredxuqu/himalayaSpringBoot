@@ -19,7 +19,7 @@ public class ConnectioManangerTest extends BaseTestCase {
 	
 	@Autowired
 	ConnectionManager connectionManager;
-
+ 
 	@Before
 	public void setup() throws Exception {
 

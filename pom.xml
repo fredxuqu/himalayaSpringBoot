@@ -29,6 +29,7 @@
 		<mysql.connector.version>5.1.40</mysql.connector.version>
 		<mybatis.version>3.4.2</mybatis.version>
 		<dubbo.version>2.5.4-SNAPSHOT</dubbo.version>
+		<spring.data.releasetrain.version>Hopper-SR8</spring.data.releasetrain.version>
 		
 		<!--junit.version>4.12</junit.version>
 		<solr.version>6.3.0</solr.version>
@@ -94,9 +95,25 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	
 	<build>
-		<finalName>himalayaSpringBoot</finalName>
+		<finalName>springboot</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.8</source>
+					<target>1.8</target>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
 </project>
 
