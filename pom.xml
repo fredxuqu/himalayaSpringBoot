@@ -11,9 +11,9 @@
 	<url>http://maven.apache.org</url> 
   
 	<modules>
-		<module>himalaya-web</module>
-		<!--module>himalaya-dao</module>
-		<module>himalaya-redis</module>
+		<module>himalaya-springboot-web</module>
+		<module>himalaya-springboot-mybatis</module>
+		<!--module>himalaya-redis</module>
 		<module>himalaya-rocketmq</module>
 		<module>himalaya-solr</module>
 		<module>himalaya-elastic</module>
@@ -52,6 +52,13 @@
 				<version>${spring.boot.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			
+			<dependency>
+			    <groupId>org.mybatis.spring.boot</groupId>
+			    <artifactId>mybatis-spring-boot-starter</artifactId>
+			    <version>1.1.1</version>
+			    <scope>import</scope>
 			</dependency>
 			
 			<!-- oracle jdbc driver -->
