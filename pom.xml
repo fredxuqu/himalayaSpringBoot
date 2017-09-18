@@ -13,6 +13,7 @@
 	<modules>
 		<module>himalaya-springboot-web</module>
 		<module>himalaya-springboot-mybatis</module>
+		<module>himalaya-springboot-mybatisxml</module>
 		<!--module>himalaya-redis</module>
 		<module>himalaya-rocketmq</module>
 		<module>himalaya-solr</module>
