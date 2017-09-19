@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.himalaya.repository.HimalayaTagsDAO" >
+    <resultMap id="BaseResultMap" type="com.himalaya.domain.TagsDO" >
+        <id column="ID" property="id" jdbcType="TINYINT" />
+        <result column="TAG_NAME" property="tagName" jdbcType="VARCHAR" />
+        <result column="STATUS" property="status" jdbcType="VARCHAR" />
+        <result column="PUBLISH_DATE" property="publishDate" jdbcType="DATE" />
+        <result column="LASTMODIFY_DATE" property="lastModifyDate" jdbcType="DATE" />
+    </resultMap>
+    
+    <sql id="Base_Column_List" >
+        ID, TAG_NAME, STATUS, PUBLISH_DATE, LASTMODIFY_DATE
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap"  >
+       SELECT 
+       <include refid="Base_Column_List" />
+	   FROM TB_TAGS
+    </select>
+    
+    <select id="getOne" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+        SELECT 
+       <include refid="Base_Column_List" />
+	   FROM TB_TAGS
+	   WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.himalaya.domain.TagsDO" >
+       INSERT INTO 
+       		TB_TAGS
+       		(ID, TAG_NAME, STATUS, PUBLISH_DATE, LASTMODIFY_DATE) 
+       	VALUES
+       		(#{id}, #{tagName}, #{status}, #{publishDate}, #{lastModifyDate})
+    </insert>
+    
+    <update id="update" parameterType="com.himalaya.domain.TagsDO" >
+       UPDATE 
+       		TB_TAGS 
+       SET 
+       	<if test="tagName != null">TAG_NAME = #{tagName},</if>
+       	<if test="status != null">STATUS = #{status}</if>
+       WHERE 
+       		id = #{id}
+    </update>
+    
+    <delete id="delete" parameterType="java.lang.Integer" >
+       DELETE FROM
+       		 TB_TAGS 
+       WHERE 
+       		 id =#{id}
+    </delete>
+</mapper>
