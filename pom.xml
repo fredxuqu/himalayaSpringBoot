@@ -14,8 +14,9 @@
 		<module>himalaya-springboot-web</module>
 		<module>himalaya-springboot-mybatis</module>
 		<module>himalaya-springboot-mybatisxml</module>
-		<!--module>himalaya-redis</module>
-		<module>himalaya-rocketmq</module>
+		<module>himalaya-springboot-nginx</module>
+		<module>himalaya-springboot-redis</module>
+		<!--module>himalaya-rocketmq</module>
 		<module>himalaya-solr</module>
 		<module>himalaya-elastic</module>
 		<module>himalaya-dubbo-provider</module>
@@ -29,7 +30,7 @@
 		<oracle.version>11.2.0.1.0</oracle.version>
 		<mysql.connector.version>5.1.40</mysql.connector.version>
 		<mybatis.version>3.4.2</mybatis.version>
-		<dubbo.version>2.5.4-SNAPSHOT</dubbo.version>
+		<dubbo.version>2.5.4</dubbo.version>
 		<spring.data.releasetrain.version>Hopper-SR8</spring.data.releasetrain.version>
 		
 		<!--junit.version>4.12</junit.version>
