@@ -14,7 +14,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 * @E-mail: fredxuqu@163.com
 * @version 
 * 2017年7月25日 下午5:45:47
-* Description 
 */
 @ComponentScan 
 @EnableAutoConfiguration
