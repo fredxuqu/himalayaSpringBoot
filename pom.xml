@@ -16,12 +16,7 @@
 		<module>himalaya-springboot-mybatisxml</module>
 		<module>himalaya-springboot-nginx</module>
 		<module>himalaya-springboot-redis</module>
-		<!--module>himalaya-rocketmq</module>
-		<module>himalaya-solr</module>
-		<module>himalaya-elastic</module>
-		<module>himalaya-dubbo-provider</module>
-		<module>himalaya-dubbo-consumer</module>
-		<module>himalaya-zookeeper</module-->
+		<module>himalaya-jquery</module>
 	</modules>
 
 	<properties>
