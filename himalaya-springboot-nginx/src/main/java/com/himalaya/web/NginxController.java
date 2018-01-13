@@ -4,10 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.himalaya.Application;
 
 /**
 * @author: xuqu
@@ -38,7 +38,8 @@ public class NginxController {
         }
 	}
 	
-	@RequestMapping("/test")
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	@CrossOrigin(methods = { RequestMethod.GET, RequestMethod.POST }, origins = "*")
 	public String test(HttpServletRequest request, String userName) {
 		
 		LOGGER.info("Login .... " + userName);

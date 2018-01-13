@@ -28,5 +28,7 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 		LOGGER.info("Spring Boot Has Been Started...");
+		LOGGER.debug("Spring Boot Has Been Started...");
+		LOGGER.error("Spring Boot Has Been Started...");
 	}
 }

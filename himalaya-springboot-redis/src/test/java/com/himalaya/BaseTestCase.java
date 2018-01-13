@@ -20,7 +20,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class) 
 @WebAppConfiguration
-public class BaseTestCase {
+public class BaseTestCase { 
 
 	protected static final Logger LOGGER = LoggerFactory.getLogger(BaseTestCase.class);
 }

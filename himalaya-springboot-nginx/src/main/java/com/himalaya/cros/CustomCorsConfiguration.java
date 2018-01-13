@@ -3,11 +3,13 @@ package com.himalaya.cros;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.core.Ordered;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 /**
 * @author: xuqu
@@ -24,17 +26,21 @@ public class CustomCorsConfiguration {
 	@Value("${cros.host}")
 	String crosHost;
 	
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
+	@Bean  
+    public FilterRegistrationBean corsFilter() {  
 		
-		LOGGER.info("Configure Cros : " + crosHost);
+		LOGGER.info("Filter Registration Cros : " + crosHost);
 		
-		return new WebMvcConfigurerAdapter() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				LOGGER.info("Web Configurer Adapter Cros Host : " + crosHost);
-				registry.addMapping("/springbootdemo/**").allowedOrigins(crosHost);
-			}
-		};
-	}
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();  
+        CorsConfiguration config = new CorsConfiguration();  
+        config.setAllowCredentials(true);  
+//        config.addAllowedOrigin(crosHost);  
+        config.addAllowedOrigin(CorsConfiguration.ALL);
+        config.addAllowedHeader(CorsConfiguration.ALL);
+        config.addAllowedMethod(CorsConfiguration.ALL);
+        source.registerCorsConfiguration("/springbootdemo/**", config);  
+        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));  
+        bean.setOrder(Ordered.HIGHEST_PRECEDENCE);  
+        return bean;  
+    }
 }

@@ -24,10 +24,11 @@ public class RedisTest extends BaseTestCase {
     public void testCacheString() throws Exception {
     	try {
     		System.out.println("-------------------------");
+    		LOGGER.info("Jedis get StringRedisTemplate " + stringRedisTemplate.hashCode());
             stringRedisTemplate.opsForValue().set("aaa", "111");
             Assert.assertEquals("111", stringRedisTemplate.opsForValue().get("aaa"));
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
     }
     

@@ -1,0 +1,26 @@
+<html>
+<head>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+	  	$("#bt1").click(function(){
+	    	$.get("http://localhost:8480/springbootdemo/admin/test?userName=fred",function(data,status){
+	      		alert("数据：" + data + "\n状态：" + status);
+	    	});
+	  	});
+		
+	  	$("#bt2").click(function(){
+	  	  	alert("Data: ");
+		});
+	});
+</script>
+</head>
+
+<body>
+	<button id="bt1">UserName Fred</button>
+	
+	<button id="bt2">UserName Fred</button>
+</body>
+
+</html> 
