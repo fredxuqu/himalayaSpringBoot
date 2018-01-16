@@ -3,6 +3,8 @@ package com.himalaya.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.json.JSONObject;
+
 /**
  * @author: xuqu
  * @E-mail: fredxuqu@163.com
@@ -97,12 +99,8 @@ public class NewsDO implements Serializable {
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
-
-	public String toString() {
-		StringBuffer sb = new StringBuffer();
-		sb.append("id: " + id);
-		sb.append("; title: " + title);
-		sb.append("; auther: " + auther);
-		return sb.toString();
+	
+	public String toString(){
+		return new JSONObject(this).toString();
 	}
 }
