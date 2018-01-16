@@ -4,7 +4,10 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 /**
 * @author: xuqu
@@ -13,11 +16,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 * 2017年7月25日 下午5:45:47
 * Description
 */
-//@ComponentScan 
-//@EnableAutoConfiguration
-//@EnableScheduling
-//@Configuration
+
 @SpringBootApplication
+@EnableAutoConfiguration
+@Configuration
+@ServletComponentScan
 @MapperScan("com.himalaya.repository")
 public class Application {
 
