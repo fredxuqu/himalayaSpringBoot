@@ -2,14 +2,14 @@ package com.himalaya.controller;
 
 import java.util.List;
 
-import org.json.JSONObject;
+import org.json.JSONArray;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.himalaya.domain.NewsDO;
 import com.himalaya.repository.HimalayaDao;
@@ -22,14 +22,18 @@ import com.himalaya.repository.HimalayaDao;
 * Description
 */
 
-@Component("controller")
-@RequestMapping("/search")
+@RestController
 public class DruidController {
 
 	private final Logger logger = LoggerFactory.getLogger(DruidController.class);
 
 	@Autowired
 	private HimalayaDao himalayaDao;
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+	public @ResponseBody String index() {
+		return "Spring boot & druid demo.";
+	}
 
 	@RequestMapping(value = "/listall", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	public @ResponseBody String searchTags() {
@@ -38,11 +42,12 @@ public class DruidController {
 
 		List<NewsDO> news = null;
 		
-		JSONObject resultJSON = null;
+		JSONArray resultJSON = null;
 
 		try {
 			news = himalayaDao.getAll();
-			resultJSON = new JSONObject(news);
+			logger.info("Get " + news.size() + " records");
+			resultJSON = new JSONArray(news);
 			logger.debug("news : {} ", resultJSON.toString());
 		} catch (Exception e) {
 			
