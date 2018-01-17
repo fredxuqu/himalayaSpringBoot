@@ -15,10 +15,10 @@ import com.himalaya.domain.NewsDO;
 * 2017年7月26日 上午11:05:36
 * Description
 */
-public class HimalayaDaoTest extends BaseTestCase {
+public class HimalayaNewsDaoTest extends BaseTestCase {
 	
 	@Autowired
-	HimalayaDao himalayaDao;
+	HimalayaNewsDao himalayaDao;
 	
 	@Test
 	public void test01GetAll(){

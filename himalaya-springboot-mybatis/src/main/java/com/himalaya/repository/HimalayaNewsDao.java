@@ -15,7 +15,7 @@ import com.himalaya.domain.NewsDO;
 * 2017年7月26日 上午11:00:06
 * Description
 */
-public interface HimalayaDao {
+public interface HimalayaNewsDao {
 
 	@Select("SELECT * FROM TB_NEWS")
     @Results({
