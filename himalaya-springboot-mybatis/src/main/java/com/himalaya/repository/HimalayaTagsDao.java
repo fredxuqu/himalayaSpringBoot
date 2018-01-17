@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
@@ -47,7 +48,7 @@ public interface HimalayaTagsDao {
         @Result(property = "modifyTime", column = "MODIFY_TIME"),
         @Result(property = "modifyUser", column = "MODIFY_USER")
     })
-    TagsDO getById(Integer id);
+    TagsDO getById(@Param("id") Integer id);
  
     @Insert("INSERT INTO TB_TAGS(ID,TAG_NAME,TYPE,STATUS,RANK,CREATE_TIME,CREATE_USER,MODIFY_TIME,MODIFY_USER) "
     		+ "VALUES(#{id}, #{tagName}, #{type}, #{status}, #{rank}, #{createTime}, #{createUser}, #{modifyTime}, #{modifyUser})")
@@ -57,5 +58,5 @@ public interface HimalayaTagsDao {
     void update(TagsDO user);
  
     @Delete("DELETE FROM TB_TAGS WHERE id =#{id}")
-    void delete(Integer id);
+    void delete(@Param("id") Integer id);
 }
