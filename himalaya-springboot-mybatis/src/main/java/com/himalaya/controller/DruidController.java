@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.himalaya.domain.NewsDO;
-import com.himalaya.repository.HimalayaDao;
+import com.himalaya.domain.TagsDO;
+import com.himalaya.repository.HimalayaNewsDao;
+import com.himalaya.repository.HimalayaTagsDao;
 
 /**
 * @author: xuqu
@@ -28,15 +30,18 @@ public class DruidController {
 	private final Logger logger = LoggerFactory.getLogger(DruidController.class);
 
 	@Autowired
-	private HimalayaDao himalayaDao;
+	private HimalayaNewsDao himalayaNewsDao;
+	
+	@Autowired
+	private HimalayaTagsDao himalayaTagsDao;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	public @ResponseBody String index() {
 		return "Spring boot & druid demo.";
 	}
 
-	@RequestMapping(value = "/listall", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
-	public @ResponseBody String searchTags() {
+	@RequestMapping(value = "/news/listall", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+	public @ResponseBody String searchNews() {
 
 		logger.info("List All Records!");
 
@@ -45,7 +50,30 @@ public class DruidController {
 		JSONArray resultJSON = null;
 
 		try {
-			news = himalayaDao.getAll();
+			news = himalayaNewsDao.getAll();
+			logger.info("Get " + news.size() + " records");
+			resultJSON = new JSONArray(news);
+			logger.debug("news : {} ", resultJSON.toString());
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			logger.error("Searching tags error, msg:", e.getMessage());
+		}
+
+		return resultJSON.toString();
+	}
+	
+	@RequestMapping(value = "/tags/listall", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+	public @ResponseBody String searchTags() {
+
+		logger.info("List All Tags Records!");
+
+		List<TagsDO> news = null;
+		
+		JSONArray resultJSON = null;
+
+		try {
+			news = himalayaTagsDao.getAll();
 			logger.info("Get " + news.size() + " records");
 			resultJSON = new JSONArray(news);
 			logger.debug("news : {} ", resultJSON.toString());

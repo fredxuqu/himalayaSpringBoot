@@ -1,9 +1,9 @@
-package com.himalaya.filter;
-
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.annotation.WebInitParam;
-
-import com.alibaba.druid.support.http.WebStatFilter;
+//package com.himalaya.filter;
+//
+//import javax.servlet.annotation.WebFilter;
+//import javax.servlet.annotation.WebInitParam;
+//
+//import com.alibaba.druid.support.http.WebStatFilter;
 
 /**
  * Druid的StatFilter
