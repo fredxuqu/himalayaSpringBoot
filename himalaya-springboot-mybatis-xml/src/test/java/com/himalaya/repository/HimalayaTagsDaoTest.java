@@ -38,7 +38,7 @@ public class HimalayaTagsDaoTest extends BaseTestCase {
     }
 	
     @Test
-    public void testInsert(){
+    public void test01Insert(){
     	TagsDO tag = new TagsDO();
     	tag.setId(1234);
     	tag.setTagName("Fredxu");
@@ -53,7 +53,7 @@ public class HimalayaTagsDaoTest extends BaseTestCase {
     }
     
     @Test
-    public void test04Update(){
+    public void test02Update(){
     	TagsDO tag = new TagsDO();
     	tag.setId(1234);
     	tag.setTagName("Wendy Xu");
@@ -62,7 +62,7 @@ public class HimalayaTagsDaoTest extends BaseTestCase {
     }
  
     @Test
-    public void testDelete(){
+    public void test03Delete(){
     	himalayaTagsDao.delete(1234);
     }
 }

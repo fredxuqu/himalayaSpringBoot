@@ -25,7 +25,7 @@
 	   FROM TB_NEWS
     </select>
 
-    <select id="getOne" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+    <select id="getById" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
        SELECT 
        <include refid="Base_Column_List" />
 	     FROM TB_NEWS

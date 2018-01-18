@@ -41,7 +41,7 @@ public interface HimalayaNewsDao {
         @Result(property = "type", column = "TYPE"),
         @Result(property = "publishTime", column = "PUBLISH_TIME")
     })
-    NewsDO getOne(@Param("id") Integer id);
+    NewsDO getById(@Param("id") Integer id);
  
     @Insert("INSERT INTO TB_NEWS(ID,TITLE,CONTENT,AUTHOR,TYPE,PUBLISH_TIME) "
     		+ "VALUES(#{id}, #{title}, #{content}, #{author}, #{type}, #{publishTime})")
