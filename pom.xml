@@ -11,6 +11,7 @@
 	<url>http://maven.apache.org</url> 
   
 	<modules>
+		<module>himalaya-springboot-logging</module>
 		<module>himalaya-springboot-web</module>
 		<module>himalaya-springboot-mybatis</module>
 		<module>himalaya-springboot-mybatis-xml</module>
@@ -107,6 +108,12 @@
 			    <groupId>javassist</groupId>
 			    <artifactId>javassist</artifactId>
 			    <version>${javassist.version}</version>
+			</dependency>
+			
+			<dependency>
+			    <groupId>org.projectlombok</groupId>
+			    <artifactId>lombok</artifactId>
+			    <version>1.16.18</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
