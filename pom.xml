@@ -13,7 +13,7 @@
 	<modules>
 		<module>himalaya-springboot-web</module>
 		<module>himalaya-springboot-mybatis</module>
-		<module>himalaya-springboot-mybatisxml</module>
+		<module>himalaya-springboot-mybatis-xml</module>
 		<module>himalaya-springboot-nginx</module>
 		<module>himalaya-springboot-redis</module>
 		<module>himalaya-jquery</module>
