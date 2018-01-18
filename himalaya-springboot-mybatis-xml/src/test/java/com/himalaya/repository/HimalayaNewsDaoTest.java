@@ -33,7 +33,7 @@ public class HimalayaNewsDaoTest extends BaseTestCase {
     
     @Test
     public void testGetOne(){
-    	NewsDO news = himalayaNewsDao.getOne(new Integer(1));
+    	NewsDO news = himalayaNewsDao.getById(new Integer(1));
     	LOGGER.info(news.toString());
     }
 	

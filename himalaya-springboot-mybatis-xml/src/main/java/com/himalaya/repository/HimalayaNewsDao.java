@@ -18,7 +18,7 @@ public interface HimalayaNewsDao {
 	
     List<NewsDO> getAll();
     
-    NewsDO getOne(Integer id);
+    NewsDO getById(Integer id);
  
     void insert(NewsDO user);
  
