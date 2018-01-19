@@ -26,15 +26,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BaseTestCase {
 
-	protected static final Logger LOGGER = LoggerFactory.getLogger(BaseTestCase.class);
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Test
 	public void testLogging(){
 		//TRACE < DEBUG < INFO < WARN < ERROR < FATAL
-		LOGGER.trace("TRACE logs. {}" , " test aaa ");
-		LOGGER.debug("Debug logs. {}" , " test aaa ");
-		LOGGER.info("Info logs. {}" , " test aaa ");
-		LOGGER.warn("Warn logs. {}" , " test aaa ");
-		LOGGER.error("Error logs. {}" , " test aaa ");
+		logger.trace("TRACE: {}" , "This is a trace message");
+		logger.debug("Debug: {}" , "This is a debug message");
+		logger.info("Info: {}" , "This is an info message");
+		logger.warn("Warn: {}" , "This is a warn message");
+		logger.error("Error: {}" , "This is an error message");
 	}
 }
