@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
 * @author: xuqu
@@ -17,7 +16,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 */
 @ComponentScan 
 @EnableAutoConfiguration
-@EnableScheduling
 @Configuration
 @SpringBootApplication
 public class Application {
@@ -26,6 +24,6 @@ public class Application {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
-		LOGGER.info("Spring Boot Has Been Started");
+		LOGGER.info("Spring Boot Reids Server is started.");
 	}
 }

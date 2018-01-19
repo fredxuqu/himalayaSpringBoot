@@ -32,10 +32,10 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 	<build>
 		<finalName>springboot-logging</finalName>
@@ -43,7 +43,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>1.4.5.RELEASE</version>
+				<version>${spring.boot.version}</version>
 				<executions>
 					<execution>
 						<goals>
