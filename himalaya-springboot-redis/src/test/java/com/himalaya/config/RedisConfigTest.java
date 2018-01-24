@@ -1,5 +1,6 @@
 package com.himalaya.config;
 
+import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import com.himalaya.BaseTestCase;
 public class RedisConfigTest extends BaseTestCase {
 	
     @Autowired
-    private RedisTemplate<String, String> redisTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
     
     @Test
     public void testCacheString() throws Exception {
@@ -37,9 +38,21 @@ public class RedisConfigTest extends BaseTestCase {
     		System.out.println("-------------------------");
     		LOGGER.info("Jedis get StringRedisTemplate " + redisTemplate.hashCode());
     		redisTemplate.opsForValue().set("test", "55555");
-            Assert.assertEquals("12341234", redisTemplate.opsForValue().get("test"));
+            Assert.assertEquals("55555", redisTemplate.opsForValue().get("test"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-    }	    
+    }	
+    
+    @Test
+    public void testObject() throws Exception {
+    	try {
+    		System.out.println("-------------------------");
+    		LOGGER.info("Jedis get StringRedisTemplate " + redisTemplate.hashCode());
+    		redisTemplate.opsForValue().set("testobj", new JSONObject("{\"id\":\"fred\"}"));
+    		LOGGER.info(redisTemplate.opsForValue().get("testobj").toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }	
 }
