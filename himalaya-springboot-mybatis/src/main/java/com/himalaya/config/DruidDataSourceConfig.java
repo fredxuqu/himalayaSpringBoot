@@ -42,7 +42,7 @@ public class DruidDataSourceConfig {
     private DruidWebStatFilterSetting webStatFilter;
 
     @Bean
-    @ConfigurationProperties("spring.druid.datasource")
+//    @ConfigurationProperties("spring.druid.datasource")
     public DruidDataSource dataSource(
             DataSourceProperties properties) throws Exception{
     	

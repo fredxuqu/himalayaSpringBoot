@@ -27,7 +27,19 @@ public class RedisConfigTest extends BaseTestCase {
     		redisTemplate.opsForValue().set("aaa", "111");
             Assert.assertEquals("111", redisTemplate.opsForValue().get("aaa"));
 		} catch (Exception e) {
-			e.printStackTrace(); 
+			e.printStackTrace();
+		}
+    }
+    
+    @Test
+    public void testCache() throws Exception {
+    	try {
+    		System.out.println("-------------------------");
+    		LOGGER.info("Jedis get StringRedisTemplate " + redisTemplate.hashCode());
+    		redisTemplate.opsForValue().set("test", "55555");
+            Assert.assertEquals("12341234", redisTemplate.opsForValue().get("test"));
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
     }	    
 }
