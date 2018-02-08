@@ -1,16 +1,10 @@
+/**
 package com.himalaya.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-/**
-* @author: xuqu
-* @E-mail: fredxuqu@163.com
-* @version 
-* 2018年1月16日 下午3:00:06
-* Description
-*/
 @Component
 @ConfigurationProperties(prefix = "spring.druid.datasource")
 @PropertySource("classpath:druid-config.properties")
@@ -166,3 +160,4 @@ public class DruidSettings {
 		this.useGlobalDataSourceStat = useGlobalDataSourceStat;
 	}
 }
+*/

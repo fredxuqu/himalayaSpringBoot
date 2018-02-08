@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +16,7 @@ import org.json.JSONObject;
  * @E-mail: fredxuqu@163.com
  * @version 2017年9月18日 下午10:46:08 Description
  */
+@Entity(name="TB_NEWS")
 public class NewsDO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
