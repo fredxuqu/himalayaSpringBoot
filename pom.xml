@@ -13,6 +13,7 @@
 	<modules>
 		<module>himalaya-springboot-logging</module>
 		<module>himalaya-springboot-web</module>
+		<module>himalaya-springboot-job</module>
 		<module>himalaya-springboot-jpa</module>
 		<module>himalaya-springboot-mybatis</module>
 		<module>himalaya-springboot-mybatis-xml</module>
