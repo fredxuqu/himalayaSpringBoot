@@ -9,7 +9,7 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	
-	<artifactId>himalayaSpringBootMyBatis</artifactId>
+	<artifactId>himalayaSpringBootMyBatisXML</artifactId>
 	<packaging>jar</packaging>
 	<name>Himalaya Spring Boot Mybatis Demo</name>
 	<url>http://maven.apache.org</url>

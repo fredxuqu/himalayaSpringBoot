@@ -100,7 +100,7 @@ public class NewsDO implements Serializable {
 		this.updateTime = updateTime;
 	}
 
-	public String toString() {
-		return new JSONObject(this).toString();
-	}
+//	public String toString() {
+//		return new JSONObject(this).toString();
+//	}
 }

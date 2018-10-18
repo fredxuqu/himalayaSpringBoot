@@ -98,8 +98,4 @@ public class TagsDO implements Serializable {
 	public void setModifyUser(String modifyUser) {
 		this.modifyUser = modifyUser;
 	}
-	
-	public String toString(){
-		return new JSONObject(this).toString();
-	}
 }

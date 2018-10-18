@@ -74,7 +74,7 @@ public class TagsDO implements Serializable {
 		this.modifyUser = modifyUser;
 	}
 	
-	public String toString(){
-		return new JSONObject(this).toString();
-	}
+//	public String toString(){
+//		return new JSONObject(this).toString();
+//	}
 }

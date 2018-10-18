@@ -1,5 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -7,81 +8,56 @@
 		<artifactId>himalayaSpringBoot</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-
-	<artifactId>himalayaJQuery</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	
+	<artifactId>himalayaSpringBootRocketMQ</artifactId>
 	<packaging>jar</packaging>
-	<name>Himalaya JQuery Demo</name>
+	<name>Himalaya Spring Boot RocketMQ Demo</name>
 	<url>http://maven.apache.org</url>
-		
-	<dependencies>			
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
 		<dependency>		
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-		</dependency>
+		</dependency>		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		
-		<!-- oracle jdbc driver -->
-		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc6 -->
-		<dependency>
-		    <groupId>com.oracle</groupId>
-		    <artifactId>ojdbc6</artifactId>
-		</dependency>
-		
-		<dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>spring-boot-starter-rocketmq</artifactId>
         </dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
+			<artifactId>fastjson</artifactId>
 		</dependency>
-		
 		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
 		</dependency>
-			
-		<!-- Dubbo -->
-		<!-- <dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>dubbo</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency> -->
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-reflect</artifactId>
+			<version>1.0.6</version>
+		</dependency>
 	</dependencies>
 	<build>
-		<finalName>springboot</finalName>
+		<finalName>springboot-mybatis</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${spring.boot.version}</version>
+				<version>1.4.5.RELEASE</version>
 				<executions>
 					<execution>
 						<goals>
@@ -100,7 +76,7 @@
 					<showWarnings>true</showWarnings>
 				</configuration>
 			</plugin>
-			<plugin> 
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 			</plugin>
