@@ -1,0 +1,42 @@
+1. dependency
+<dependency>
+	<groupId>io.springfox</groupId>
+	<artifactId>springfox-swagger-ui</artifactId>
+</dependency>
+<dependency>
+	<groupId>io.springfox</groupId>
+	<artifactId>springfox-swagger2</artifactId>
+</dependency>
+		
+2. config class
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+
+	@Bean
+	public Docket createRestApi() {
+		return new Docket(DocumentationType.SWAGGER_2)
+				.pathMapping("/")
+				.select()
+				.apis(RequestHandlerSelectors.basePackage("com.himalaya.web"))
+				.paths(PathSelectors.any())
+				.build()
+				.apiInfo(testApiInfo());
+	}
+
+	private ApiInfo testApiInfo() {
+		return new ApiInfoBuilder()
+				.title("springboot利用swagger构建api文档")
+				.description("Details")
+				.version("1.0")
+				.termsOfServiceUrl("NO terms of service")
+				.contact(new Contact("fred", "csdn.com", "fredxuqu@163.com"))
+				.license("The Apache License, Version 2.0")
+				.licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
+				.build();
+	}
+}
+
+3. verify
+http://localhost:8080/swagger-ui.html
+	
