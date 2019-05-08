@@ -1,0 +1,58 @@
+# embedded servlet container
+server:
+  port: 8080
+  context-path: /springboot
+
+#Control log level TRACE < DEBUG < INFO < WARN < ERROR
+logging:
+  level:
+    com:
+      himalaya: info
+  path: logs
+
+mybatis:
+  mapper-locations: "classpath:/**/*.xml"
+  type-aliases-package: com.himalaya.domain
+
+# Druid Configuration
+spring:
+  datasource:
+    druid:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/solr
+      username: test
+      password: "Admin#1010"
+      initialSize: 11
+      maxActive: 11
+      minIdle: 11
+      maxWait: 6001
+      timeBetweenEvictionRunsMillis: 60001
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 21
+      filters: config,stat,wall,log4j
+      connectionProperties: config.decrypt=false;druid.stat.slowSqlMillis=3000;druid.stat.logSlowSql=true;druid.stat.mergeSql=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKi1Lu1txrYzDD/AwexrT3cS12iz1VJltbo8+0UN0/fpybs0i0nHQ0eUMvqiroeQEuNHC+gQ8ppMegMxia155+0CAwEAAQ==
+      validationQuery: SELECT 1 FROM DUAL
+      minEvictableIdleTimeMillis: 300001
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      validationQueryTimeout: 30001
+      web-stat-filter:
+        enabled: true
+        urlPattern: "/*"
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico, /druid/*"
+        sessionStatEnable: true
+        sessionStatMaxCount: 1001
+        principalSessionName: 
+        principalCookieName: 
+        profileEnable: true
+      stat-view-servlet:
+        enabled: true
+        urlPattern: "/druid/*"
+        resetEnable: false
+        login-username: admin
+        loginPassword: 123456
+        allow: 192.168.1.111,192.168.1.112,192.168.1.113,10.192.48.164,127.0.0.1
+        deny: 
+      aopPatterns: 
+      useGlobalDataSourceStat: true
