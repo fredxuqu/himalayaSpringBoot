@@ -1,0 +1,11 @@
+# embedded servlet container
+server:
+  port: 8080
+  context-path: /cxf
+
+#Control log level TRACE < DEBUG < INFO < WARN < ERROR
+logging:
+  level:
+    com:
+      himalaya: info
+  path: logs

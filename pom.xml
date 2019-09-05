@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>com.himalaya</groupId>
 	<artifactId>himalayaSpringBoot</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>Himalaya Spring Boot Demo Maven Webapp</name>
-	
-	<url>http://maven.apache.org</url> 
-  
+
+	<url>http://maven.apache.org</url>
+
 	<modules>
 		<module>himalaya-springboot-logging</module>
 		<module>himalaya-springboot-web</module>
@@ -19,36 +19,45 @@
 		<module>himalaya-springboot-druid2</module>
 		<module>himalaya-springboot-mybatis</module>
 		<module>himalaya-springboot-mybatis-xml</module>
+		<module>himalaya-springboot-mybatis-multidb</module>
 		<module>himalaya-springboot-nginx</module>
 		<module>himalaya-springboot-rocketmq</module>
 		<module>himalaya-springboot-redis</module>
 		<module>himalaya-springboot-vue</module>
+		<module>himalaya-springboot-nlp</module>
+		<module>himalaya-springboot-cxf</module>
 	</modules>
 
 	<properties>
 		<spring.boot.version>1.5.2.RELEASE</spring.boot.version>
 		<mybatis.spring.boot.starter>1.3.3</mybatis.spring.boot.starter>
 		<druid.spring.boot.starter>1.1.10</druid.spring.boot.starter>
-		<redis.spring.boot.starter>1.5.2.RELEASE</redis.spring.boot.starter>		
-		
+		<redis.spring.boot.starter>1.5.2.RELEASE</redis.spring.boot.starter>
+
 		<mybatis.version>3.4.4</mybatis.version>
 		<mybatis.spring.version>1.3.1</mybatis.spring.version>
-		<druid.version>1.1.10</druid.version>			
+		<druid.version>1.1.10</druid.version>
 		<oracle.version>11.2.0.3</oracle.version>
 		<mysql.connector.version>5.1.40</mysql.connector.version>
 
 		<spring.data.releasetrain.version>Hopper-SR8</spring.data.releasetrain.version>
 		<ognl.version>3.1.6</ognl.version>
-		<javassist.version>3.12.1.GA</javassist.version>	
+		<javassist.version>3.12.1.GA</javassist.version>
 		<lombok.version>1.16.18</lombok.version>
-		
+
 		<jackson.databind.version>2.6.7</jackson.databind.version>
-		
+
 		<spring-boot-starter-rocketmq-version>1.0.0-SNAPSHOT</spring-boot-starter-rocketmq-version>
-	
+
 		<io.springfox.swagger.version>2.7.0</io.springfox.swagger.version>
+
+		<ansj.version>5.0.4</ansj.version>
+		<tree_split.version>1.5</tree_split.version>
+		<nlp-lang.version>1.7.7</nlp-lang.version>
+
+		<cxf.version>3.1.6</cxf.version>
 	</properties>
-	
+
 	<repositories>
 		<repository>
 			<id>local-file</id>
@@ -66,47 +75,47 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			
+
 			<dependency>
-			    <groupId>org.mybatis.spring.boot</groupId>
-			    <artifactId>mybatis-spring-boot-starter</artifactId>
-			    <version>${mybatis.spring.boot.starter}</version>
-			    <scope>import</scope>
-			</dependency>
-			
-			<dependency>  
-				<groupId>com.alibaba</groupId>  
-				<artifactId>druid-spring-boot-starter</artifactId>  
-				<version>${druid.spring.boot.starter}</version> 
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatis.spring.boot.starter}</version>
 				<scope>import</scope>
 			</dependency>
-			
+
 			<dependency>
-			    <groupId>org.springframework.boot</groupId>
-			    <artifactId>spring-boot-starter-data-redis</artifactId>
-			    <version>${redis.spring.boot.starter}</version>
-			    <scope>import</scope>
-			</dependency>		
-			
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>${druid.spring.boot.starter}</version>
+				<scope>import</scope>
+			</dependency>
+
 			<dependency>
-	            <groupId>org.apache.rocketmq</groupId>
-	            <artifactId>spring-boot-starter-rocketmq</artifactId>
-	            <version>${spring-boot-starter-rocketmq-version}</version>
-	        </dependency>	
-			
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-redis</artifactId>
+				<version>${redis.spring.boot.starter}</version>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.rocketmq</groupId>
+				<artifactId>spring-boot-starter-rocketmq</artifactId>
+				<version>${spring-boot-starter-rocketmq-version}</version>
+			</dependency>
+
 			<!-- oracle jdbc driver -->
 			<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc6 -->
 			<dependency>
-			    <groupId>com.oracle</groupId>
-			    <artifactId>ojdbc6</artifactId>
+				<groupId>com.oracle</groupId>
+				<artifactId>ojdbc6</artifactId>
 				<version>${oracle.version}</version>
 			</dependency>
-			
+
 			<dependency>
-	            <groupId>mysql</groupId>
-	            <artifactId>mysql-connector-java</artifactId>
-	            <version>${mysql.connector.version}</version>
-	        </dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.connector.version}</version>
+			</dependency>
 
 			<!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
 			<dependency>
@@ -114,49 +123,75 @@
 				<artifactId>druid</artifactId>
 				<version>${druid.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis</artifactId>
 				<version>${mybatis.version}</version>
 			</dependency>
-			
+
 			<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 			<dependency>
-			    <groupId>org.mybatis</groupId>
-			    <artifactId>mybatis-spring</artifactId>
-			    <version>${mybatis.spring.version}</version>
-			</dependency>		
-			
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis.spring.version}</version>
+			</dependency>
+
 			<!-- https://mvnrepository.com/artifact/javassist/javassist -->
 			<dependency>
-			    <groupId>javassist</groupId>
-			    <artifactId>javassist</artifactId>
-			    <version>${javassist.version}</version>
+				<groupId>javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<version>${javassist.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.databind.version}</version>
 			</dependency>
 			
 			<dependency>
-			    <groupId>org.projectlombok</groupId>
-			    <artifactId>lombok</artifactId>
-			    <version>${lombok.version}</version>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>2.8.7</version>
 			</dependency>
-			
-			<dependency>
-	      		<groupId>com.fasterxml.jackson.core</groupId>
-	      		<artifactId>jackson-databind</artifactId>
-	      		<version>${jackson.databind.version}</version>
-	    	</dependency>
-	    	<dependency>
-	      		<groupId>com.fasterxml.jackson.core</groupId>
-	      		<artifactId>jackson-annotations</artifactId>
-	      		<version>2.8.7</version>
-	    	</dependency>
-	    	
-	    	<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+
+			<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 			<dependency>
 				<groupId>com.alibaba</groupId>
 				<artifactId>fastjson</artifactId>
 				<version>1.2.49</version>
+			</dependency>
+			
+			<dependency>
+	            <groupId>org.apache.commons</groupId>
+	            <artifactId>commons-lang3</artifactId>
+	            <version>3.4</version>
+	        </dependency>
+        
+			<!-- ansj_seg -->
+			<dependency>
+				<groupId>org.ansj</groupId>
+				<artifactId>ansj_seg</artifactId>
+				<version>${ansj.version}</version>
+			</dependency>
+			<!-- tree_split -->
+			<dependency>
+				<groupId>org.ansj</groupId>
+				<artifactId>tree_split</artifactId>
+				<version>${tree_split.version}</version>
+			</dependency>
+			<!-- nlp-lang -->
+			<dependency>
+				<groupId>org.nlpcn</groupId>
+				<artifactId>nlp-lang</artifactId>
+				<version>${nlp-lang.version}</version>
 			</dependency>
 
 			<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
@@ -165,66 +200,79 @@
 				<artifactId>httpclient</artifactId>
 				<version>4.5.3</version>
 			</dependency>
-			
+
+			<!-- cxf webservice depandance -->
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-frontend-jaxws</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger-ui</artifactId>
-				<version>${io.springfox.swagger.version}</version> 
+				<version>${io.springfox.swagger.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger2</artifactId>
 				<version>${io.springfox.swagger.version}</version>
-				<exclusions> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-core</artifactId> 
-	                </exclusion> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-beans</artifactId> 
-	                </exclusion> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-context</artifactId> 
-	                </exclusion> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-context-support</artifactId> 
-	                </exclusion> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-aop</artifactId> 
-	                </exclusion> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-tx</artifactId> 
-	                </exclusion> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-orm</artifactId> 
-	                </exclusion> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-jdbc</artifactId> 
-	                </exclusion> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-web</artifactId> 
-	                </exclusion> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-webmvc</artifactId> 
-	                </exclusion> 
-	                <exclusion> 
-	                    <groupId>org.springframework</groupId> 
-	                    <artifactId>spring-oxm</artifactId> 
-	                </exclusion> 
-	            </exclusions>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-beans</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-context</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-context-support</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-aop</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-tx</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-orm</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-jdbc</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-web</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-webmvc</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-oxm</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<finalName>springboot</finalName>
 		<plugins>

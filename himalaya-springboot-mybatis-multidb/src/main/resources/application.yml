@@ -1,0 +1,24 @@
+# embedded servlet container
+server:
+  port: 8080
+  context-path: /springboot
+
+#Control log level TRACE < DEBUG < INFO < WARN < ERROR
+logging:
+  level.com.himalaya: info
+  path: logs
+
+spring.datasource:
+  ai: 
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/moodys
+    username: test
+    password: 'Admin#1010'
+    
+  solr: 
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/solr
+    username: test
+    password: 'Admin#1010'
