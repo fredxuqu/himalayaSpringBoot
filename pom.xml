@@ -45,7 +45,7 @@
 		<javassist.version>3.12.1.GA</javassist.version>
 		<lombok.version>1.16.18</lombok.version>
 
-		<jackson.databind.version>2.6.7</jackson.databind.version>
+		<jackson.databind.version>2.13.4.1</jackson.databind.version>
 
 		<spring-boot-starter-rocketmq-version>1.0.0-SNAPSHOT</spring-boot-starter-rocketmq-version>
 
